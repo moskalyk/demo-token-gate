@@ -1,5 +1,7 @@
 # demo-token-gate
 
+[live demo](https://lingering-bread-3119.on.fleek.co/)
+
 Token gating is a popular way to access services built on the decentralized web using ERC20/ERC721/ERC1155. It promotes the ability to define roles & create exclusivity globally with the use of an NFT. Builders can create portals to purchase NFTs which then can be referenced directly via the contract address in the dapp code.
 
 By pairing hosting of the static single page application with an IPFS solution, users can have high up-time, while creating a privacy layer for all users in their ecosystem.
@@ -44,5 +46,6 @@ Note: `^0.43.18` of `@0xsequence/indexer` will fix a `Vite 'global is not define
 
 ## tools used
 - sequence
+- ethers
 - solid-js
 - fleek
