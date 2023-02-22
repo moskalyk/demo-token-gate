@@ -23,7 +23,7 @@ Examples that can be built
 $ npx degit solidjs/templates/ts . 
 
 # add sequence indexer module
-$ yarn add @0xsequence/indexer@^0.43.18
+$ yarn add ethers @0xsequence @0xsequence/indexer@^0.43.18
 
 # run application
 $ yarn dev
