@@ -17,6 +17,7 @@
   "dependencies": {
     "0xsequence": "^0.43.15",
     "@0xsequence/indexer": "^0.43.18",
+    "ethers": "5.7.2",
     "solid-js": "^1.6.10"
   }
 }
