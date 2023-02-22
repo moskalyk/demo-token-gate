@@ -3,6 +3,6 @@
       "image": "node:alpine",
       "command": "yarn && yarn build",
       "publicDir": "dist",
-      "baseDir": "src"
+      "baseDir": ""
     }
 }
