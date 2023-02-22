@@ -1,34 +1,41 @@
-## Usage
+# demo-token-gate
 
-Those templates dependencies are maintained via [pnpm](https://pnpm.io) via `pnpm up -Lri`.
+Token gating is a popular way to access services built on the decentralized web using ERC20/ERC721/ERC1155. It promotes the ability to define roles & create exclusivity globally with the use of an NFT. Builders can create portals to purchase NFTs which then can be referenced directly via the contract address in the dapp code.
 
-This is the reason you see a `pnpm-lock.yaml`. That being said, any package manager will work. This file can be safely be removed once you clone a template.
+By pairing hosting of the static single page application with an IPFS solution, users can have high up-time, while creating a privacy layer for all users in their ecosystem.
 
-```bash
-$ npm install # or pnpm install or yarn install
+## sequence indexer solution
+
+With a few lines of code using the [sequence](https://sequence.xyz/) [indexer](https://docs.sequence.xyz/indexer) one can query a balance with high up-time to create custom experience for users.
+
+Examples that can be built
+- chat
+- videostreaming
+- event ticketing
+- games & in-game adventures
+
+## run dapp
+
+```
+# create a frontend repository for the app to be placed in, devs can also use react
+$ npx degit solidjs/templates/ts . 
+
+# add sequence indexer module
+$ yarn add @0xsequence/indexer@^0.43.18
+
+# run application
+$ yarn dev
+
+# build application
+$ yarn build
 ```
 
-### Learn more on the [Solid Website](https://solidjs.com) and come chat with us on our [Discord](https://discord.com/invite/solidjs)
+### deploy dapp
+TODO
 
-## Available Scripts
+#### fixes
+Note: `^0.43.18` of `@0xsequence/indexer` will fix a `Vite 'global is not defined'` problem within the package. This will not be present with react and normal `@0xsequence/indexer`
 
-In the project directory, you can run:
-
-### `npm dev` or `npm start`
-
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br>
-
-### `npm run build`
-
-Builds the app for production to the `dist` folder.<br>
-It correctly bundles Solid in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-## Deployment
-
-You can deploy the `dist` folder to any static host provider (netlify, surge, now, etc.)
+## tools used
+- sequence
+- solid-js

@@ -75,6 +75,11 @@
   resolved "https://registry.yarnpkg.com/@0xsequence/indexer/-/indexer-0.43.15.tgz#eead9837b30ffbe7c60dbc5c28fd802471f0c066"
   integrity sha512-AcM212p4oPUKM2DgZ2xgR5vw9F2CJjmwWX4qybRivo2tN3/8ttwnUG6mT4XUOb9wbvSgk+5WXj5/xu54q/Vtdw==
 
+"@0xsequence/indexer@^0.43.18":
+  version "0.43.18"
+  resolved "https://registry.yarnpkg.com/@0xsequence/indexer/-/indexer-0.43.18.tgz#b430def723d5bef634f42236fc685fdae688044b"
+  integrity sha512-6WvVLYGRymQAfeoFh+i+Z4DOx/CWY1qBiXRsSINSz7mzbv0Tse+BRj2ZDLrCCZj9wC4oBEtAdbd07moqG4a75Q==
+
 "@0xsequence/metadata@^0.43.15":
   version "0.43.15"
   resolved "https://registry.yarnpkg.com/@0xsequence/metadata/-/metadata-0.43.15.tgz#67cb1e6da802e4581bd4f3b6727596e482a84ade"

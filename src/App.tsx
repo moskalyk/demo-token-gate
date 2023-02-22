@@ -4,7 +4,6 @@ import { createSignal } from "solid-js";
 import logo from './logo.svg';
 import styles from './App.module.css';
 
-// Works in both a Webapp (browser) or Node.js:
 import { SequenceIndexerClient } from '@0xsequence/indexer'
 
 const indexer = new SequenceIndexerClient('https://polygon-indexer.sequence.app')
@@ -22,24 +21,22 @@ const App: Component = () => {
         accountAddress: accountAddress,
         includeMetadata: true
     })
-    console.log('collection of items:', nftBalances)
 
-    nftBalances.balances.map((balance) => {
-      if(balance.contractAddress == contractAddress && (balance.balance as any) > 0) setLoggedIn(true)
-    }) 
+    if(nftBalances.balances.length > 0) setLoggedIn(true)
   }
 
   return (
     <div class={styles.App}>
       {
-        loggedIn() 
+        ! loggedIn() 
           ? 
         (
-          <>
-          <p>Login</p> 
-          <button onClick={login}></button>
-          </>
-        ): <p>🟢</p>
+          // build any custom login experience
+            <button onClick={login}>login</button>
+        ): (
+          // include any component here
+          <p>🟢</p>
+        )
       }
     </div>
   );
