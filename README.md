@@ -30,8 +30,14 @@ $ yarn dev
 $ yarn build
 ```
 
-### deploy dapp
-TODO
+### deploy dapp with fleek
+1. sign up with [fleek.co](fleek.co) using your github
+2. create a new site and connect with github
+3. add a repository with a [.fleek.json]() file
+4. deploy your code automatically with fleek CI/CD with a `git push`
+5. access in the browser: `https://ipfs.cf-ipfs.com/ipfs/<CID>`
+
+note: you can deploy your own gateway, or share amongst a group of people
 
 #### fixes
 Note: `^0.43.18` of `@0xsequence/indexer` will fix a `Vite 'global is not defined'` problem within the package. This will not be present with react and normal `@0xsequence/indexer`
@@ -39,3 +45,4 @@ Note: `^0.43.18` of `@0xsequence/indexer` will fix a `Vite 'global is not define
 ## tools used
 - sequence
 - solid-js
+- fleek
