@@ -33,7 +33,7 @@ $ yarn build
 ### deploy dapp with fleek
 1. sign up with [fleek.co](fleek.co) using your github
 2. create a new site and connect with github
-3. add a repository with a [.fleek.json]() file
+3. add a repository with a [.fleek.json](https://github.com/moskalyk/demo-token-gate/blob/master/.fleek.json) file
 4. deploy your code automatically with fleek CI/CD with a `git push`
 5. access in the browser: `https://ipfs.cf-ipfs.com/ipfs/<CID>`
 
