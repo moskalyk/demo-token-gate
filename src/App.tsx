@@ -7,13 +7,13 @@ import styles from './App.module.css';
 import { sequence } from '0xsequence'
 import { SequenceIndexerClient } from '@0xsequence/indexer'
 
-const indexer = new SequenceIndexerClient('https://polygon-indexer.sequence.app')
+const indexer = new SequenceIndexerClient('https://mumbai-indexer.sequence.app')
 
 const App: Component = () => {
   const [address, setAddress] = createSignal<string>('');
 
   const [loggedIn, setLoggedIn] = createSignal(false);
-  const contractAddress = '0x22d5f9B75c524Fec1D6619787e582644CD4D7422'
+  const contractAddress = '0xdC60AfD3926c123B1fc3bDBF15c57AACB5046B99'
   let accountAddress: any = '.'
 
   const wallet = sequence.initWallet('mumbai')
@@ -27,16 +27,17 @@ const App: Component = () => {
       authorize: true,
       settings: {
         theme: 'dark'
-      }
+      },
+      expiry: 1
     })
 
-    // set wallet address
+    setTimeout(() => {
+      // this should be logged out
+      wallet.openWallet()
+    }, 5000)
+
+    console.log(connectWallet)
     accountAddress = connectWallet.session?.accountAddress
-    setAddress(accountAddress)
-
-    console.log(connectWallet.connected)
-
-    wallet.openWallet()
 
     // query Sequence Indexer for all nft balances of the account on Polygon
     const nftBalances = await indexer.getTokenBalances({
@@ -44,8 +45,12 @@ const App: Component = () => {
         accountAddress: accountAddress,
         includeMetadata: true
     })
+    console.log(nftBalances)
     
-    if(nftBalances.balances.length > 0) setLoggedIn(true)
+    if(nftBalances.balances.length > 0 && connectWallet.connected) {
+      setLoggedIn(true)
+      setAddress(accountAddress)
+    }
   }
 
   return (
@@ -55,12 +60,12 @@ const App: Component = () => {
           ? 
         (
           // build any custom login experience
-            <button onClick={login}>{address() == '' ? 'connect' : address()}</button>
+            <button onClick={login}>{address().length < 1 ? 'connect' : address()}</button>
         ): (
           // include any component here
           <>
             <p>🟢</p>
-            <button onClick={login}>{address() == '' ? 'connect' : address()}</button>
+            <button onClick={login}>{address().length < 1 ? 'connect' : address()}</button>
           </>
         )
       }
