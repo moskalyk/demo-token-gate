@@ -38,7 +38,7 @@ const App: Component = () => {
         includeMetadata: true
     })
     
-    if(nftBalances.balances.length > 0) setLoggedIn(true)
+    if(nftBalances.balances.length > 0 && connectWallet.connected) setLoggedIn(true)
   }
 
   return (
